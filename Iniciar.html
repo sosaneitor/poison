@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" media="all" href="css/style5.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iniciar</title>
+</head>
+<body>
+    <div class="col-md-6 logo-w3layouts text-center">
+        <h1 class="logo-w3layouts">
+            <a class="navbar-brand" href="index.html">
+                POISON </a>
+        </h1>
+    </div>
+    <div class="login-wrap">
+        <div class="login-html">
+            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Iniciar sesion</label>
+            <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Registrate</label>
+            <div class="login-form">
+                <form action="PHP/iniciar.php" method="post">
+                <div class="sign-in-htm">
+                    <div class="group">
+                        <label for="user" class="label">Correo</label>
+                        <input id="user" type="text" class="input" name="correo">
+                    </div>
+                    <div class="group">
+                        <label for="pass" class="label">Contraseña</label>
+                        <input id="pass" type="password" class="input" data-type="password" name="clave">
+                    </div>
+                    <div class="group">
+                        <input id="check" type="checkbox" class="check" checked>
+                        <label for="check"><span class="icon"></span> Recordarme</label>
+                    </div>
+                    <div class="group">
+                        <input type="submit" class="button" value="Iniciar">
+                    
+                    </div>
+                </form>
+                    <div class="hr"></div>
+                    <div class="foot-lnk">
+                        <a href="#forgot">Olvido su contraseña</a>
+                    </div>
+                </div>
+            <form action="PHP/registro.php" method="post" name="form">
+                <div class="sign-up-htm">
+                    <div class="group">
+                        <label for="nombre" class="label">Nombre</label>
+                        <input id="user" type="text" class="input" name="nombre">
+                    </div>
+                    <div class="group">
+                        <label for="user" class="label">Celular</label>
+                        <input id="user" type="text" class="input" name="celular">
+                    </div>
+                    <div class="group">
+                        <label for="pass" class="label">Contraseña</label>
+                        <input id="pass" type="password" class="input" data-type="password" name="clave">
+                    </div>
+                    <div class="group">
+                        <label for="pass" class="label">Repita la Contraseña </label>
+                        <input id="pass" type="password" class="input" data-type="password">
+                    </div>
+                    <div class="group">
+                        <label for="pass" class="label" >Correo</label>
+                        <input id="pass" type="text" class="input" name="correo">
+                    </div>
+                    <div class="group">
+                        <input type="submit" class="button" value="Registrarse">
+                    </div>
+                </form>
+                    <div class="hr"></div>
+                    <div class="foot-lnk">
+                        <label for="tab-1">Ya estas Registrado?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
