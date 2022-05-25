@@ -1,3 +1,15 @@
+<?php
+
+
+session_start();
+
+
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,7 +54,7 @@
             </div>
             <div class="col-md-6 logo-w3layouts text-center">
                 <h1 class="logo-w3layouts">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="sesion.php">
                         POISON </a>
                 </h1>
             </div>
@@ -50,9 +62,7 @@
             <div class="col-md-3 top-info-cart text-right mt-lg-4">
                 <ul class="cart-inner-info">
                     <li class="button-log">
-                        <a class="btn-open" href="iniciar.html">
-                            <span class="fa fa-user" aria-hidden="true"></span>
-                        </a>
+                    <?php echo "BIENVENIDE " .$_SESSION["Nombre"];?>
                     </li>
                     <li class="galssescart galssescart2 cart cart box_1">
                         <form action="#" method="post" class="last">
@@ -102,12 +112,12 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav nav-mega mx-auto">
                     <li class="nav-item active">
-                        <a class="nav-link ml-lg-0" href="index.html">Inicio
+                        <a class="nav-link ml-lg-0" href="sesion.php">Inicio
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="personalizar.html">Personaliza</a>
+                        <a class="nav-link" href="personalizarS.php">Personaliza</a>
                     </li>
                 
                     <li class="nav-item dropdown">
@@ -196,7 +206,7 @@
     <div class="personalizar1">
 
         
-        <form class="#" name="form" action="Personalizar1.php"  method="post">
+        <form class="#" name="form" action="personalizar.php"  method="post">
             
             <div class="col-lg-4 address-grid">
                 <div class="row address-info">
@@ -211,6 +221,12 @@
                                         Escoger prenda:<select name="prenda" id="prenda" >
                                             <option value="camiseta"> CAMISETA </option>
                                             <option value="buzo">BUZO</option>
+                                            <option value="buzo">Buzo con capota y bolsillos </option>
+											<option value="buzo-cremallera"> Buzo con cremallera </option>
+											<option value="buzo-sin-bolsillos">Buzo sin bolsillos</option>
+											<option value="buzo-sin-mangas">Buzo sin mangas</option>
+											<option value="buzo-sencillo">Buzo sin capota ni bolsillos</option>
+											<option value="buzo-sin-capota">Buzo sin capota con bolsillos</option>
                                         </select> <P>
                         
                     </div>
@@ -266,29 +282,27 @@
                 </div>
 
             <div class="pz-container">
-                Celular:  <input type="text" name="celular"> <p>
+                Celular: <?php echo $_SESSION["celular"]; ?>
             </div> 
 
-                    <form action="PHP/Personalizar2.php">
+                    
             <div class="pz-container">
                         Seleccione una imagen que desea agregar a la prenda:  <input type="file" name="imagen" id="imagen"> <p>
                         </div>
                         
-            <div class="pz-container">
-                            Seleccione la fecha del pedido (desde el momento de la fecha, se estiman 5 dias habiles para la entrega del producto) <input type="date" name="fecha"> <p>
-            </div>  
+            
                             
             <div class="pz-container">
                                 Descripcion: <input type="text" name="descripcion" id="descripcion"> <p></p>
                             </div>
 
-                                <input type="submit" value="enviar formulario">
+            <input type="submit" value="COMPRAR AHORA">
                                 
-                            </form>
+                           
                             
                             
                             
-                        </form> <p>
+        </form> <p>
                  
                             
     </div>
@@ -364,7 +378,7 @@
 					</div>
 					<ul class="links">
 						<li>
-							<a href="index.html">INICIO</a>
+							<a href="sesion.php">INICIO</a>
 						</li>
 						<li>
 							<a href="Personalizar.html">PERSONALIZA</a>

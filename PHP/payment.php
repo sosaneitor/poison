@@ -1,5 +1,8 @@
 <?php
+
 session_start();
+
+$pedido=$_SESSION["Nropedido"];
 
 
 ?>
@@ -10,7 +13,7 @@ session_start();
 <html lang="zxx">
 
 <head>
-	<title>POISON STORE</title>
+	<title>POISON</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8">
 	<meta name="keywords" content="Goggles a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -28,8 +31,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<link href="css/login_overlay.css" rel='stylesheet' type='text/css' />
 	<link href="css/style6.css" rel='stylesheet' type='text/css' />
 	<link rel="stylesheet" href="css/shop.css" type="text/css" />
-	<link rel="stylesheet" href="css/owl.carousel.css" type="text/css" media="all">
-	<link rel="stylesheet" href="css/owl.theme.css" type="text/css" media="all">
+	<link rel="stylesheet" type="text/css" href="css/checkout.css">
+	<link href="css/easy-responsive-tabs.css" rel='stylesheet' type='text/css' />
 	<link href="css/style.css" rel='stylesheet' type='text/css' />
 	<link href="css/fontawesome-all.css" rel="stylesheet">
 	<link href="//fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet">
@@ -59,7 +62,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 				<div class="col-md-3 top-info-cart text-right mt-lg-4">
 					<ul class="cart-inner-info">
-						<h3><?php echo "Bienvenide ".$_SESSION["Nombre"] ?></h3>
+						<li class="button-log">
+						<?php echo "Nombre: " .$_SESSION["Nombre"];?>
+						</li>
 						<li class="galssescart galssescart2 cart cart box_1">
 							<form action="#" method="post" class="last">
 								<input type="hidden" name="cmd" value="_cart">
@@ -113,7 +118,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="PersonalizarS.php">Personaliza</a>
+							<a class="nav-link" href="personalizarS.php">Personaliza</a>
 						</li>
 					
 						<li class="nav-item dropdown">
@@ -193,155 +198,149 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 			</nav>
 		</header>
-		<!-- //header -->
+    </div>
 		<!-- banner -->
-		<div class="banner">
-			<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-				<ol class="carousel-indicators">
-					<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-					<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-					<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-					<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-				</ol>
-				<div class="carousel-inner" role="listbox">
-					<div class="carousel-item active">
-						<div class="carousel-caption text-center">
-							<h3>Men’s eyewear
-								<span>Cool summer sale 50% off</span>
-							</h3>
-							<a href="shop.html" class="btn btn-sm animated-button gibson-three mt-4">Shop Now</a>
-						</div>
-					</div>
-					<div class="carousel-item item2">
-						<div class="carousel-caption text-center">
-							<h3>Women’s eyewear
-								<span>Want to Look Your Best?</span>
-							</h3>
-							<a href="shop.html" class="btn btn-sm animated-button gibson-three mt-4">Shop Now</a>
+		<div class="banner_inner">
+			<div class="services-breadcrumb">
+				<div class="inner_breadcrumb">
 
-						</div>
-					</div>
-					<div class="carousel-item item3">
-						<div class="carousel-caption text-center">
-							<h3>Men’s eyewear
-								<span>Cool summer sale 50% off</span>
-							</h3>
-							<a href="shop.html" class="btn btn-sm animated-button gibson-three mt-4">Shop Now</a>
-
-						</div>
-					</div>
-					<div class="carousel-item item4">
-						<div class="carousel-caption text-center">
-							<h3>Buzos para mujeres
-								<span>Compra hoy y no pagues, es gratis</span>
-							</h3>
-							<a href="shop.html" class="btn btn-sm animated-button gibson-three mt-4">Shop Now</a>
-						</div>
-					</div>
+					<ul class="short">
+						<li>
+							<a href="sesion.php">Home</a>
+							<i>|</i>
+						</li>
+						<li>Metodos de Pago </li>
+					</ul>
 				</div>
-				<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					<span class="sr-only">Previous</span>
-				</a>
-				<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-					<span class="carousel-control-next-icon" aria-hidden="true"></span>
-					<span class="sr-only">Next</span>
-				</a>
 			</div>
-			<!--//banner -->
+
 		</div>
-	</div>
-	
-				<!-- /grids -->
-				<div class="bottom-sub-grid-content py-lg-5 py-3">
-					<div class="row">
-						<div class="col-lg-4 bottom-sub-grid text-center">
-							<div class="bt-icon">
+		<!--//banner -->
+		<!--// header_top -->
+		<!--Payment-->
+		<section class="banner-bottom-wthreelayouts py-lg-5 py-3">
+			<div class="container">
+				<div class="inner-sec-shop px-lg-4 px-3">
+                    <h2 class="titulos-h3"><?php echo "Codigo de Compra: ".$pedido; ?> </h2>
+                    <p> <a href="www.poisonst.com"> Una vez echo el pago, por favor envia el comprobante y el codigo de compra via whatsapp (puedes hacerlo dando click aqui) </a> </p>
+					<h3 class="titulos-h3">Metodos de pago </h3>
 
-								<span class="far fa-hand-paper"></span>
+					<!--/tabs-->
+					<div class="responsive_tabs">
+						<div id="horizontalTab">
+							<ul class="resp-tabs-list">
+								<li>DAVIPLATA</li>
+								<li>BANCOLOMBIA</li>
+								<li>NEQUI</li>
+								<li>Paypal </li>
+							</ul>
+							<div class="resp-tabs-container">
+								<!--/tab_one-->
+								<div class="tab1">
+									<div class="pay_info">
+										<div class="vertical_post check_box_agile">
+											<h5>DAVIPLATA</h5>
+											<div class="checkbox">
+												<div class="check_box_one cashon_delivery">
+													<label class="anim">
+														
+														<span> NUMERO DAVIPLATA: 3212210569</span>
+													</label>
+												</div>
+
+											</div>
+										</div>
+									</div>
+
+								</div>
+								<!--//tab_one-->
+								<div class="tab2">
+									<div class="pay_info">
+									<h5>BANCOLOMBIA</h5>
+											<div class="checkbox">
+												<div class="check_box_one cashon_delivery">
+													<label class="anim">
+														
+														<span> AHORROS BANCOLOMBIA: 03212210569</span> <p></p>
+														<span> NOMBRE RESPONSABLE: SEBASTIAN SOSA  </span> <p></p>
+														<span> CC: 1088352638</span>
+													</label>
+												</div>
+
+											</div>
+
+									</div>
+								</div>
+								<div class="tab3">
+
+									<div class="pay_info">
+										<div class="vertical_post">
+										<h5>NEQUI</h5>
+											<div class="checkbox">
+												<div class="check_box_one cashon_delivery">
+													<label class="anim">
+														
+														<span> NUMERO NEQUI: 3157063375 </span> <P>
+														<span> </span>
+													</label>
+												</div>
+
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="tab4">
+									<div class="pay_info row">
+										<div class="col-md-6 tab-grid">
+											<img class="pp-img" src="images/paypal.png" alt="Image Alternative text" title="Image Title">
+											<p>Important: You will be redirected to PayPal's website to securely complete your payment.</p>
+											<a class="btn btn-primary">Checkout via Paypal</a>
+										</div>
+										<div class="col-md-6">
+										<form action="#" method="post" class="cc-form">
+												<div class="clearfix">
+													<div class="form-group form-group-cc-number">
+														<label>Card Number</label>
+														<input class="form-control" placeholder="xxxx xxxx xxxx xxxx" type="text">
+														<span class="cc-card-icon"></span>
+													</div>
+													<div class="form-group form-group-cc-cvc">
+														<label>CVV</label>
+														<input class="form-control" placeholder="xxxx" type="text">
+													</div>
+												</div>
+												<div class="clearfix">
+													<div class="form-group form-group-cc-name">
+														<label>Card Holder Name</label>
+														<input class="form-control" type="text">
+													</div>
+													<div class="form-group form-group-cc-date">
+														<label>Valid Thru</label>
+														<input class="form-control" placeholder="mm/yy" type="text">
+													</div>
+												</div>
+												<div class="checkbox checkbox-small mt-4">
+													<label>
+														<input class="i-check" type="checkbox" checked="">Add to My Cards</label>
+												</div>
+												<input class="btn btn-primary submit mt-4" type="submit" value="Proceed Payment">
+											</form>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+								</div>
 							</div>
-
-							<h4 class="sub-tittle-w3layouts my-lg-4 my-3">Satisfaccion Garantizada</h4>
-							<p>Usamos exelentes telas y de la mejor calidad para garantizar una experiencia unica</p>
-							<p>
-								<a href="shop.html" class="btn btn-sm animated-button gibson-three mt-4">Comprar ahora.</a>
-							</p>
 						</div>
-						<!-- /.col-lg-4 -->
-						<div class="col-lg-4 bottom-sub-grid text-center">
-							<div class="bt-icon">
-								<span class="fas fa-rocket"></span>
-							</div>
-
-							<h4 class="sub-tittle-w3layouts my-lg-4 my-3">Envio Rapido</h4>
-							<p>Despues de personalizar tu prenda, el tiempo estimado maximo de confeccion es de 5 dias habiles.</p>
-							<p>
-								<a href="shop.html" class="btn btn-sm animated-button gibson-three mt-4">compra ahora </a>
-							</p>
-						</div>
-						<!-- /.col-lg-4 -->
-						<div class="col-lg-4 bottom-sub-grid text-center">
-							<div class="bt-icon">
-								<span class="far fa-sun"></span>
-							</div>
-
-							<h4 class="sub-tittle-w3layouts my-lg-4 my-3">Personaliza</h4>
-							<p>personaliza la prenda a tu gusto, elige el color, la talla o cualquier otro atributo que quieras cambiar </p>
-							<p>
-								<a href="shop.html" class="btn btn-sm animated-button gibson-three mt-4">compra ahora </a>
-							</p>
-						</div>
-						<!-- /.col-lg-4 -->
 					</div>
+					<!--//tabs-->
 				</div>
-				<!-- //grids -->
-				<!-- /clients-sec -->
-				<div class="testimonials p-lg-5 p-3 mt-4">
-					<div class="row last-section">
-						<div class="col-lg-3 footer-top-w3layouts-grid-sec">
-							<div class="mail-grid-icon text-center">
-								<i class="fas fa-gift"></i>
-							</div>
-							<div class="mail-grid-text-info">
-								<h3>PRODUCTOS UNICOS</h3>
-								<p>gran cantidad de prendas genuinas.</p>
-							</div>
-						</div>
-						<div class="col-lg-3 footer-top-w3layouts-grid-sec">
-							<div class="mail-grid-icon text-center">
-								<i class="fas fa-shield-alt"></i>
-							</div>
-							<div class="mail-grid-text-info">
-								<h3>Productos Seguros </h3>
-								<p>Garantizamos la entrega de tu prenda.</p>
-							</div>
-						</div>
-						<div class="col-lg-3 footer-top-w3layouts-grid-sec">
-							<div class="mail-grid-icon text-center">
-								<i class="fas fa-dollar-sign"></i>
-							</div>
-							<div class="mail-grid-text-info">
-								<h3>Contra entrega</h3>
-								<p>Pagas cuando recibes en la ciudad de pereira o dosquebradas.</p>
-							</div>
-						</div>
-						<div class="col-lg-3 footer-top-w3layouts-grid-sec">
-							<div class="mail-grid-icon text-center">
-								<i class="fas fa-truck"></i>
-							</div>
-							<div class="mail-grid-text-info">
-								<h3>Domicilio</h3>
-								<p>Hasta la puerta de tu casa. </p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- //clients-sec -->
+
 			</div>
-		</div>
-	</section>
-	<!-- about -->
-	<!--footer -->
+			<!-- //payment -->
+		</section>
+		<!--//Payment-->
+		<!--footer -->
+		<!--footer -->
 	<footer class="py-lg-5 py-3">
 		<div class="container-fluid px-lg-5 px-3">
 			<div class="row footer-top-w3layouts">
@@ -439,147 +438,110 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			
 		</div>
 	</footer>
-	<!-- //footer -->
+		<!-- //footer -->
+		<!--jQuery-->
+		<script src="js/jquery-2.2.3.min.js"></script>
+		<!-- newsletter modal -->
+		<!--search jQuery-->
+		<script src="js/modernizr-2.6.2.min.js"></script>
+		<script src="js/classie-search.js"></script>
+		<script src="js/demo1-search.js"></script>
+		<!--//search jQuery-->
+		<!-- cart-js -->
+		<script src="js/minicart.js"></script>
+		<script>
+			googles.render();
 
-	<!--jQuery-->
-	<script src="js/jquery-2.2.3.min.js"></script>
-	<!-- newsletter modal -->
-	<!-- Modal -->
-	<!-- Modal -->
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
+			googles.cart.on('googles_checkout', function (evt) {
+				var items, len, i;
 
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body text-center p-5 mx-auto mw-100">
-					<h6>SUSCRIBETE A NUESTRO BOLETIN</h6>
-					<h3>OBTEN HASTA UN 30% DE DESCUENTO EN TU PRIMERA COMPRA </h3>
-					<div class="login newsletter">
-						<form action="#" method="post">
-							<div class="form-group">
-								<label class="mb-2">CORREO ELECTRONICO</label>
-								<input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="" required="">
-							</div>
-							<button type="submit" class="btn btn-primary submit mb-4">Recibe tu codigo prom</button>
-						</form>
-						<p class="text-center">
-							<a href="#">No gracias, prefiero comprar sin descuento</a>
-						</p>
-					</div>
-				</div>
+				if (this.subtotal() > 0) {
+					items = this.items();
 
-			</div>
-		</div>
-	</div>
-	<script>
-		$(document).ready(function () {
-			$("#myModal").modal();
-		});
-	</script>
-	<!-- // modal -->
-
-	<!--search jQuery-->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<script src="js/classie-search.js"></script>
-	<script src="js/demo1-search.js"></script>
-	<!--//search jQuery-->
-	<!-- cart-js -->
-	<script src="js/minicart.js"></script>
-	<script>
-		googles.render();
-
-		googles.cart.on('googles_checkout', function (evt) {
-			var items, len, i;
-
-			if (this.subtotal() > 0) {
-				items = this.items();
-
-				for (i = 0, len = items.length; i < len; i++) {}
-			}
-		});
-	</script>
-	<!-- //cart-js -->
-	<script>
-		$(document).ready(function () {
-			$(".button-log a").click(function () {
-				$(".overlay-login").fadeToggle(200);
-				$(this).toggleClass('btn-open').toggleClass('btn-close');
+					for (i = 0, len = items.length; i < len; i++) {}
+				}
 			});
-		});
-		$('.overlay-close1').on('click', function () {
-			$(".overlay-login").fadeToggle(200);
-			$(".button-log a").toggleClass('btn-open').toggleClass('btn-close');
-			open = false;
-		});
-	</script>
-	<!-- carousel -->
-	<!-- Count-down -->
-	<script src="js/simplyCountdown.js"></script>
-	<link href="css/simplyCountdown.css" rel='stylesheet' type='text/css' />
-	<script>
-		var d = new Date();
-		simplyCountdown('simply-countdown-custom', {
-			year: d.getFullYear(),
-			month: d.getMonth() + 2,
-			day: 25
-		});
-	</script>
-	<!--// Count-down -->
-	<script src="js/owl.carousel.js"></script>
-	<script>
-		$(document).ready(function () {
-			$('.owl-carousel').owlCarousel({
-				loop: true,
-				margin: 10,
-				responsiveClass: true,
-				responsive: {
-					0: {
-						items: 1,
-						nav: true
-					},
-					600: {
-						items: 2,
-						nav: false
-					},
-					900: {
-						items: 3,
-						nav: false
-					},
-					1000: {
-						items: 4,
-						nav: true,
-						loop: false,
-						margin: 20
+		</script>
+		<!-- //cart-js -->
+		<script>
+			$(document).ready(function () {
+				$(".button-log a").click(function () {
+					$(".overlay-login").fadeToggle(200);
+					$(this).toggleClass('btn-open').toggleClass('btn-close');
+				});
+			});
+			$('.overlay-close1').on('click', function () {
+				$(".overlay-login").fadeToggle(200);
+				$(".button-log a").toggleClass('btn-open').toggleClass('btn-close');
+				open = false;
+			});
+		</script>
+		<!-- carousel -->
+		<!-- easy-responsive-tabs -->
+		<script src="js/easy-responsive-tabs.js"></script>
+		<script>
+			$(document).ready(function () {
+				$('#horizontalTab').easyResponsiveTabs({
+					type: 'default', //Types: default, vertical, accordion           
+					width: 'auto', //auto or any width like 600px
+					fit: true, // 100% fit in a container
+					closed: 'accordion', // Start closed if in accordion view
+					activate: function (event) { // Callback function if tab is switched
+						var $tab = $(this);
+						var $info = $('#tabInfo');
+						var $name = $('span', $info);
+						$name.text($tab.text());
+						$info.show();
 					}
-				}
-			})
-		})
-	</script>
+				});
+				$('#verticalTab').easyResponsiveTabs({
+					type: 'vertical',
+					width: 'auto',
+					fit: true
+				});
+			});
+		</script>
 
-	<!-- //end-smooth-scrolling -->
+		<!-- credit-card -->
+		<script type="text/javascript" src="js/creditly.js"></script>
+		<link rel="stylesheet" href="css/creditly.css" type="text/css" media="all" />
 
+		<script type="text/javascript">
+			$(function () {
+				var creditly = Creditly.initialize(
+					'.creditly-wrapper .expiration-month-and-year',
+					'.creditly-wrapper .credit-card-number',
+					'.creditly-wrapper .security-code',
+					'.creditly-wrapper .card-type');
 
-	<!-- dropdown nav -->
-	<script>
-		$(document).ready(function () {
-			$(".dropdown").hover(
-				function () {
-					$('.dropdown-menu', this).stop(true, true).slideDown("fast");
-					$(this).toggleClass('open');
-				},
-				function () {
-					$('.dropdown-menu', this).stop(true, true).slideUp("fast");
-					$(this).toggleClass('open');
-				}
-			);
-		});
-	</script>
-	<!-- //dropdown nav -->
-  <script src="js/move-top.js"></script>
+				$(".creditly-card-form .submit").click(function (e) {
+					e.preventDefault();
+					var output = creditly.validate();
+					if (output) {
+						// Your validated credit card output
+						console.log(output);
+					}
+				});
+			});
+		</script>
+		<!-- //credit-card -->
+		<!-- dropdown nav -->
+		<script>
+			$(document).ready(function () {
+				$(".dropdown").hover(
+					function () {
+						$('.dropdown-menu', this).stop(true, true).slideDown("fast");
+						$(this).toggleClass('open');
+					},
+					function () {
+						$('.dropdown-menu', this).stop(true, true).slideUp("fast");
+						$(this).toggleClass('open');
+					}
+				);
+			});
+		</script>
+		<!-- //dropdown nav -->
+		<script src="js/move-top.js"></script>
     <script src="js/easing.js"></script>
     <script>
         jQuery(document).ready(function($) {
@@ -610,8 +572,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </script>
     <!--// end-smoth-scrolling -->
 
-	<script src="js/bootstrap.js"></script>
-	<!-- js file -->
+
+		<!-- //smooth-scrolling-of-move-up -->
+		<script src="js/bootstrap.js"></script>
+		<!-- js file -->
 </body>
 
 </html>
